@@ -43,7 +43,9 @@ export class LoginComponent implements OnDestroy {
    * Destroy subscription to avoid memory leak
    */
   public ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
   /**
