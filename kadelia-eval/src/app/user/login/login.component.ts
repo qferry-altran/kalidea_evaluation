@@ -12,7 +12,7 @@ import { UserService } from '../user.service';
 })
 export class LoginComponent implements OnDestroy {
 
-  public credential = new FormGroup({
+  public credential: FormGroup = new FormGroup({
     mail: new FormControl('',[
         Validators.minLength(6),
         Validators.required
@@ -23,7 +23,7 @@ export class LoginComponent implements OnDestroy {
       ])
   });
 
-  public error = '';
+  public error: String = '';
 
   public subscription: Subscription;
 

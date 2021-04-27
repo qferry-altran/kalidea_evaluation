@@ -1,1 +1,3 @@
-<label>Voulez vous vraiment vous déconnecter ? <button type="submit" (click)="onLogoutClick()">Oui</button></label>
+<app-loading [loading]="loading">Voulez vous vraiment vous déconnecter ?
+    <button button type="submit" class="btn btn-primary" (click)="onLogoutClick()">Oui</button>
+</app-loading>

@@ -12,6 +12,8 @@ export class LogoutComponent implements OnDestroy {
 
   public subscription: Subscription;
 
+  public loading: boolean = false;
+
   constructor(
     private userService: UserService,
     private router: Router
@@ -35,10 +37,14 @@ export class LogoutComponent implements OnDestroy {
       this.subscription.unsubscribe();
     }
 
+    this.loading = true;
+
     // Call the UserService to disconnect
     this.subscription = this.userService.logout().subscribe(() => {
       this.router.navigate(['/home']);
-    });
+      this.loading = false;
+    },
+    () => this.loading = false);
   }
 
 }
