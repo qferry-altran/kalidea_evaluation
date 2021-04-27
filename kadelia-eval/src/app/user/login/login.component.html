@@ -1,1 +1,23 @@
-<p>login works!</p>
+<h1>Login</h1>
+
+<div class="alert alert-danger" *ngIf="error">
+    {{ error }}
+</div>
+
+<form [formGroup]="credential">
+  
+    <label>
+      Email 
+      <input type="text" formControlName="mail">
+    </label>
+  
+    <label>
+      Password
+      <input type="text" formControlName="pwd">
+    </label>
+
+    <button type="submit" [disabled]="!isValid" (click)="onSubmit()">Submit</button>
+  
+  </form>
+
+ 
