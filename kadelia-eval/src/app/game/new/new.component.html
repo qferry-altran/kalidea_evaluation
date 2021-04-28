@@ -11,3 +11,13 @@
         <input type="number" [formControl]="cols" (change)="drawGrid()">
       </label>
 </form>
+
+<table class="game">
+    <tbody>
+        <tr *ngFor="let rowTable of table; let row = index"> <!-- une tr par ligne -->
+            <td *ngFor="let colTable of table[row]; let col = index"> <!-- une td par colonne -->
+                <app-case [(color)]="table[row][col]"></app-case>
+            </td>
+        </tr>
+    </tbody>
+</table>

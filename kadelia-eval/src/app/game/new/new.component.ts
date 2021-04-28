@@ -45,14 +45,18 @@ export class NewComponent implements OnInit {
     }
 
     this.resetTable();
-    this.changeDetection.detectChanges();
   }
 
   private resetTable(): void {
+    this.table = [];
+
     for(let i = 0; i < this.rows.value; i++) {
+      this.table.push([]);
       for (let j = 0; j < this.cols.value; j++) {
-        this.table[i][j]= '';
+        this.table[i].push('');
       }
     }
+
+    this.changeDetection.detectChanges();
   }
 }
