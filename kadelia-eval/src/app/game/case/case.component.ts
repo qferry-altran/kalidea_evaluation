@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-case',
@@ -9,10 +9,13 @@ export class CaseComponent {
 
   @Input() public color: string;
 
+  @Output() colorChange = new EventEmitter();
+
   constructor() { }
 
   public requestColor(): void {
     this.color = prompt("insert color");
+    this.colorChange.emit(this.color);
   }
-
+  
 }
