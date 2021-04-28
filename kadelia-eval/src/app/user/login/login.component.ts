@@ -15,7 +15,8 @@ export class LoginComponent implements OnDestroy {
   public credential: FormGroup = new FormGroup({
     mail: new FormControl('',[
         Validators.minLength(6),
-        Validators.required
+        Validators.required,
+        Validators.email
       ]),
     pwd: new FormControl('', [
         Validators.minLength(5),
