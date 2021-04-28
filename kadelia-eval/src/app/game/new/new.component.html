@@ -16,7 +16,7 @@
     <tbody>
         <tr *ngFor="let rowTable of table; let row = index"> <!-- une tr par ligne -->
             <td *ngFor="let colTable of table[row]; let col = index"> <!-- une td par colonne -->
-                <app-case [(color)]="table[row][col]"></app-case>
+                <app-case [color]="table[row][col]" (colorChange)="onColorChange($event,row,col)"></app-case>
             </td>
         </tr>
     </tbody>

@@ -77,4 +77,10 @@ export class NewComponent implements OnInit {
 
     this.changeDetection.detectChanges();
   }
+
+  public onColorChange(color: string, row: number, col: number): void {
+    // This method has been implemented to bypass a bug with the 2 way binding (so the 2 way binding is not here anymore)
+    this.table[row][col] = color;
+    this.changeTable();
+  }
 }
