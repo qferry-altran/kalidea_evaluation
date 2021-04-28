@@ -10,12 +10,8 @@ import { UserService } from './user/user.service';
 })
 export class AppComponent {
 
-  public get isUserConnceted(): boolean {
-    return !!this.userService.user;
-  }
-
   public get userName(): string {
-    if(!this.isUserConnceted) {
+    if(!this.userService.user) {
       return;
     }
 
